@@ -40,7 +40,7 @@ function MyComponent2 () {
           <li>dalor</li>
         </ul>
       </>
-  )
+  );
 }
 
 export default App;
