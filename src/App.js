@@ -1,20 +1,19 @@
 function App() {
-  const num1 = Math.ceil(Math.random() * 6);
-  const num2 = Math.ceil(Math.random() * 6);
-
-  let messageClassName = "lose";
-  let message = "다시 던져 보세요";
-
-  if (num1 === num2) {
-    messageClassName = "WIN";
-    message = "당첨";
-  }
+  const myStyle = {
+    color: "blue",
+    backgroundColor: "gold",
+    fontsize: "70px",
+    textAlign: "center",
+  }; //  js 에서 객체 만드는 방법
   return (
     <>
-      <h1>1번 주사위 {num1}</h1>
-      <h1>2번 주사위 {num2}</h1>
-
-      <h1 className={messageClassName}>{message}</h1>
+      {/* style 속성은 객체로 주어야 함.*/}
+      {/* 두가지 방법으로 할수 있다 클래스로 하던지, 이렇게 바로 넣던지*/}
+      <div style={myStyle}> Lorem ipsum.</div>
+      <hr />
+      <div style={{ color: "red", background: "yellow", fontSize: "30px" }}>
+        Lorem ipsum dolor.
+      </div>
     </>
   );
 }
