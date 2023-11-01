@@ -1,20 +1,22 @@
 function App() {
   return (
     <>
-      <MyComp value="흥민" address="신촌" />
-      <MyComp value="여름" address="부산" />
+      <MyComp name="흥민" address="신촌" age={33} city="서울" />
+      <MyComp address="강남" age={22} city="부산" />
+      <MyComp address="런던" city="영국" />
+      <MyComp name="희찬" age={66} city="파리" address="프랑스" />
     </>
   );
 }
-//구조 분해 할당으로 할때 자바 스크립트 아귀먼트에 적용 시킨 것
-// 밑에 두개가 같다
-function MyComp({ value, address }) {
+
+// 구조 분해 할당할때 기본값을 줄 수 있다.
+function MyComp({ name = "anonymous", address, city, age = 100 }) {
   // let { value, address } = props;
   return (
     <div>
-      <h1>
-        {value}는 {address}에 산다
-      </h1>
+      <p>
+        {name}은 {age}세 이고 {address}, {city}에 산다.
+      </p>
     </div>
   );
 }
