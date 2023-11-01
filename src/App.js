@@ -8,7 +8,7 @@ function App() {
 }
 //구조 분해 할당으로 할때 자바 스크립트 아귀먼트에 적용 시킨 것
 // 밑에 두개가 같다
-function MyComp(value, address) {
+function MyComp({ value, address }) {
   // let { value, address } = props;
   return (
     <div>
