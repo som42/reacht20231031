@@ -1,16 +1,15 @@
-// 우연히 이름이 같을 수도 있다.
-// 별칭을 줄수 있다.
-import MyBox, { address } from "./component/MyBox";
-import MyElem, { address as myAddress } from "/component/MyElem";
+// style 적용 방법
+// 보통 css 파일
+// css module 사용
+// chakraui css library
+import { MyComp } from "./component/MyComp";
+import { MyBox } from "./component/MyBox";
 
-// as 로 named export 값을 import할 때 별칭을 줄 수 있음.
 function App() {
   return (
     <>
-      <h1>{address}</h1>
-      <h1>{myAddress}</h1>
+      <MyComp />
       <MyBox />
-      <MyElem />
     </>
   );
 }
