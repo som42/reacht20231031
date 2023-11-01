@@ -1,23 +1,20 @@
+//컴포넌트를 다른 파일로 빼고 싶을때?
+//src 오른쪽클리해서 new js파일 만들고 컴포넌트이름과 똑같이만들어준다.
+
+import { MyElem } from "./component/MyElem";
+import { MyComp } from "./component/MyComp";
+import { MyHeader } from "./component/MyHeader";
+
+//export 된 컴포넌트(변수, 함수, 객체)를 import 해서 사용
+
 function App() {
   return (
     <>
-      <MyComp name="흥민" address="신촌" age={33} city="서울" />
-      <MyComp address="강남" age={22} city="부산" />
-      <MyComp address="런던" city="영국" />
-      <MyComp name="희찬" age={66} city="파리" address="프랑스" />
+      <MyComp />
+      <MyElem />
+      <MyHeader />
     </>
   );
 }
 
-// 구조 분해 할당할때 기본값을 줄 수 있다.
-function MyComp({ name = "anonymous", address, city, age = 100 }) {
-  // let { value, address } = props;
-  return (
-    <div>
-      <p>
-        {name}은 {age}세 이고 {address}, {city}에 산다.
-      </p>
-    </div>
-  );
-}
 export default App;
