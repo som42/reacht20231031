@@ -1,8 +1,8 @@
 function App() {
   return (
     <div>
-      <MyBox p={"1px"} m={"10"} color="white" bg="#ffd6d1" text="첫번째" />
-      <MyBox p={"1px"} m={"10"} color="blue" bg="#ffd6d1" text="두번째" />
+      <MyBox p={"1px"} m={"1px"} color="white" bg="#ffd6d1" text="첫번째" />
+      <MyBox p={"1px"} m={"1px"} color="blue" bg="#ffd6d1" text="두번째" />
     </div>
   );
 }
