@@ -2,3 +2,9 @@
     background-color: palevioletred;
     color: black;
 }
+.special {
+    border: 5px dotted gold;
+}
+.coffee {
+    text-decoration: underline;
+}
