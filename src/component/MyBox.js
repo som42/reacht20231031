@@ -1,16 +1,11 @@
-export function MyBox() {
-  return null;
+function MyBox() {
+  return (
+    <div>
+      <h1>THIS IS MYBOX</h1>
+    </div>
+  );
 }
 
-export function MyElem() {
-  return null;
-}
-
-export function MyContainer() {
-  return null;
-}
-
-// 변수도 가능하다
-export let name = "한여름";
-export const address = "신촌";
-export const person = { name: "강인", team: "파리" };
+export const country = "프랑스";
+export const person = { name: "som", age: 33 };
+export default MyBox;
