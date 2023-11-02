@@ -1,166 +1,62 @@
 import {
   Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
   SimpleGrid,
+  Table,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
 } from "@chakra-ui/react";
-
 function App() {
   return (
     <>
-      <Box w="100%" h="900px" bgGradient={"linear(to-r, #ffd6d1, #131313)"}>
-        <SimpleGrid gap={3} columns={{ base: 1, md: 3, xl: 6 }}>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>{" "}
-          <Card>
-            <CardHeader>
-              <Heading sizw={"md"}>Lorem ipsum.</Heading>
-            </CardHeader>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              dignissimos doloremque necessitatibus nostrum, obcaecati quidem!
-            </CardBody>
-            <CardFooter>
-              <Button>❤️</Button>
-            </CardFooter>
-          </Card>
-        </SimpleGrid>
-      </Box>
+      <SimpleGrid columns={1} gap={5}>
+        <Box>
+          <Table variant="striped" colorScheme="red" size={"sm"}>
+            <Thead>
+              <Tr>
+                <Th>Lorem.</Th>
+                <Th>Amet.</Th>
+                <Th>Perferendis!</Th>
+                <Th>Quos!</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Tenetur!</Td>
+                <Td>Non.</Td>
+                <Td>At!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Laudantium?</Td>
+                <Td>Reprehenderit.</Td>
+                <Td>Assumenda.</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Aut!</Td>
+                <Td>Aut?</Td>
+                <Td>Earum!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Dicta!</Td>
+                <Td>Velit!</Td>
+                <Td>Ratione.</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Dolore?</Td>
+                <Td>Saepe.</Td>
+                <Td>Maxime?</Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
+      </SimpleGrid>
     </>
   );
 }
