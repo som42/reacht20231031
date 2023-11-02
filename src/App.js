@@ -1,11 +1,1 @@
-
-
-function App() {
-  return (
-    <div>
-
-    </div>
-  );
-}
-
-export default App;
+npm i @chakra-ui/icons
