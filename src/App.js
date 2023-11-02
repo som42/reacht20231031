@@ -1,1 +1,5 @@
-npm i @chakra-ui/icons
+function App() {
+  return <div></div>;
+}
+
+export default App;
