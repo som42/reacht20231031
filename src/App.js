@@ -2,26 +2,25 @@ import React from "react";
 import { Button } from "@chakra-ui/react";
 
 function App(props) {
-  function handleClickButton(number) {
-    console.log(number + "번째 버튼 클릭됨");
-  }
-
-  // 같은 일을 하는 함수들을 number줘서  묶어서 쓸수있다.
-  // return 에서는 화살표 함수로 해줘야 한다.
-  function handleButtonClick(n12) {
-    console.log(n12 + "번째 버튼 클릭됨");
-  }
-
-  function abc() {
-    handleClickButton(1);
+  // 브라우저는  이벤트 핸들러 메소드
+  //  event 객체를 매개 값으로 넣어준다.
+  function handeClick(event) {
+    // console.log(event);
+    console.log(event.target);
+    // console.log(event.target.className); // 이벤트하는 클래스이름을보고싶다
+    // console.log(event.target.type); // 타입을 보고싶다
   }
   return (
+    // 이벤트 프로퍼티는 on 머머로 늘 시작된다.
+    // 이벤트 퍼티가 함수로 실행 될 때 파라미터 하나를 넣어준다(우리 눈에 보이지않는다)
+    // 받겠다는 파라미터를 명시 하면 받을수 있다. 보통 e 라고 쓴다.
     <div>
-      <Button onClick={() => handleClickButton(1)}>첫번째 버튼</Button>
-      <Button onClick={abc}>첫번째 버튼</Button>
-      <Button onClick={() => handleClickButton(2)}>두번째 버튼</Button>
-      <Button onClick={() => handleButtonClick(3)}>세번째 버튼</Button>
-      <Button onClick={() => handleButtonClick(4)}>넷번째 버튼</Button>
+      <Button colorScheme="red" onClick={handeClick}>
+        button1
+      </Button>
+      <Button colorScheme="pink" onClick={handeClick}>
+        button2
+      </Button>
     </div>
   );
 }
