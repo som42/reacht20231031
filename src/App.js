@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Text } from "@chakra-ui/react";
 
 function App(props) {
+  // 현재 바뀔거 초기값
   let [number, setNumber] = useState(0);
   function handleClick() {
     // number++ ;
