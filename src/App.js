@@ -7,7 +7,6 @@ function App(props) {
   function handleChange(e) {
     console.log("인풋값이 변경됨");
     // 우리가 동작할때마다 입력된 값이 출력 된다
-    //
     console.log(e.target.value);
     text = e.target.value;
     console.log("text", text);
