@@ -1,30 +1,24 @@
-import React from "react";
 import { Button } from "@chakra-ui/react";
 
-function MyComp({ children, executeClick }) {
-  return <Button onClick={executeClick}>{children}</Button>;
-}
-function App(props) {
-  // 함수를 만들때 =>
-  function func1() {
-    console.log("func1 실행");
+function App() {
+  // 함수명 작성 관습
+  // handle 이벤트 명
+  function handleClick() {
+    console.log("second");
   }
-  // 함수를 변수에 답는다
-  let func2 = () => {
-    console.log("arrow function 실행 111");
-  };
-  // 변수에 담아서 함수를 넣나 바로 넣어버리나 같다.
+  function handleMouseEnter() {
+    console.log("thirsd");
+  }
+  function handleMouseLeave() {
+    console.log("4th");
+  }
   return (
     <div>
-      <MyComp executeClick={func1}>Button1</MyComp>
-      <MyComp executeClick={func2}>Button2</MyComp>
-      <MyComp
-        executeClick={() => {
-          console.log("arrow function 실행 222");
-        }}
-      >
-        Button3
-      </MyComp>
+      <Button onClick={() => console.log("first")}>버튼1</Button>
+      <Button onClick={handleClick}>버튼2</Button>
+      <Button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        버튼3
+      </Button>
     </div>
   );
 }
