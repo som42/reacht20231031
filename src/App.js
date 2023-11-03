@@ -1,21 +1,40 @@
-import { Button } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Heading,
+  SimpleGrid,
+} from "@chakra-ui/react";
 
-function MyLink({ to, children }) {
+function MyBox({ color, bg, children }) {
   return (
-    // 버튼 안에 링크 넣어 보기
     <>
-      <Button as="a" href={to} colorScheme="pink">
-        {children}
-      </Button>
+      <SimpleGrid gap={3} columns={{ base: 1, md: 3, xl: 6 }}>
+        <Card color={color} bg={bg}>
+          <CardHeader>
+            <Heading sizw="md">편지</Heading>
+          </CardHeader>
+          <CardBody>{children}</CardBody>
+        </Card>
+      </SimpleGrid>
     </>
   );
 }
-
-function App() {
+function App(props) {
   return (
     <>
-      <MyLink to="https://www.naver.com">naver 😌</MyLink>
-      <MyLink to="https://www.daum.net">daum ❤️</MyLink>
+      <MyBox color="black" bg="pink">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+        exercitationem explicabo hic illo inventore nihil quae quaerat quam!
+        Cumque dicta eligendi facilis fugiat illo iure laborum maxime minima
+        quae ut.
+      </MyBox>
+      <MyBox color="black" bg="gray">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+        exercitationem explicabo hic illo inventore nihil quae quaerat quam!
+        Cumque dicta eligendi facilis fugiat illo iure laborum maxime minima
+        quae ut.
+      </MyBox>
     </>
   );
 }
