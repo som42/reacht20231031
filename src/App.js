@@ -3,6 +3,7 @@ import { Button, Input } from "@chakra-ui/react";
 
 function App(props) {
   // 여기에 변수를 변경했다고 바로 반영되지는 않는다.
+  // text값이 바껴도 initial text 안바뀌고 그대로 있당
   let text = "initial text";
   function handleChange(e) {
     console.log("인풋값이 변경됨");
