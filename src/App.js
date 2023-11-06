@@ -1,37 +1,41 @@
-import React, { useState } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, Link, List, ListItem } from "@chakra-ui/react";
 
 function App(props) {
-  // 상태를 변경하는 메소드가
-  // set... 메소드로 상태 변경할 수 있음.
-  // 상태가 같은 지 아닌지 판단해서 re-render 결정함
-  // 객체는 참조 값을 사용한다
+  //배열을 그리는 방법
+  // 상태 여서 변경 되어야 한다면?
+  const arr = ["pizza", "돈까스", "햄버거", "김치찌개"];
+  const arr2 = ["손흥민", "이강인", "김민재"];
+  const arr3 = ["라떼", "아메리카노", "카푸치노"];
+  const arr4 = [
+    {id: 0, name:"라떼"},
+    {id:1, name: "에스프레소"},
+    ];
 
-  const [number, setNumber] = useState(0);
-  // 객체
-  const [numberObject, setNumberObject] = useState({ number: 0 });
+  // 자바스크립트에 map 메소드는 새 배열을 리턴해준다.
 
-  function handleNumberObjectChange() {
-    // 이렇게 사용하면 안된다.
-    // numberObject.number = numberObject.number + 1;
-    // setNumberObject(numberObject);
-
-    // 복사해서 써야 함
-    // 변경된 객체가 들어와야 리액트는 re-render을 함.
-    const newNumberObject = { ...numberObject };
-    numberObject.number = numberObject.number + 1;
-    setNumberObject(newNumberObject);
-  }
+  const listItems = arr.map((item, index) => (
+    <ListItem key={index}>{item}</ListItem>
+  ));
 
   return (
     <div>
-      <Box>
-        <Button onClick={() => setNumber(number + 1)}>number 번경</Button>
-        <Text>{number}</Text>
+      <Box mb={3}>
+        <List>{listItems}</List>
       </Box>
-      <Box>
-        <Button onClick={handleNumberObjectChange}>number 객체 변경</Button>
-        <Text>{numberObject.number}</Text>
+      <Box mb={3}>
+        <List>
+          {arr2.map((e, index) => (
+            <ListItem key={index}>{e}</ListItem>
+          ))}
+        </List>
+      </Box>
+      <Box mb={3}>
+        <List>
+          {arr3.map((e, i) => (
+            <ListItem key={i}>{e}</ListItem>
+          ))}
+        </List>
       </Box>
     </div>
   );
