@@ -1,33 +1,42 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Button, Text } from "@chakra-ui/react";
 
-function ChildComp({ onClick }) {
-  return <Button onClick={onClick}>클릭❤️</Button>;
+function CComp() {
+  // 3. context 사용 하기 : useContext(Context);
+  const message = useContext(MessageContext);
+  return <Text>받은 메세지{message}</Text>;
 }
 
-function SomeComp({ onClick }) {
-  // 건네 주는 일만 하겠다.
-  return <ChildComp onClick={onClick} />;
+function BComp() {
+  return <CComp />;
 }
 
-function OtherChildComp({ message }) {
-  return <Text>{message}</Text>;
-}
-
-// message 구조분해 할당해서, otherCilcd에게 다시 줌
-function OtherComp({ message }) {
-  return <OtherChildComp message={message} />;
+function AComp() {
+  return <BComp />;
 }
 
 function App(props) {
-  const [message, setMessage] = useState("어렵다이");
+  const [message, setMessage] = useState("");
+
+  // message state를 Ccomp에 전달 하기 목적!!
+  // 1. context 만들기 : createContext(); (크리엑트 콘텍스트) 만들때는 컴포넌트 밖에
+  // 2. context 에 state 넣기 :
+  //          <Context.Provider value={state}></Context.Provider>
+  // 3.tree 안에 context 사용 하기
 
   return (
     <div>
-      <SomeComp onClick={() => setMessage("다른 메세지")} />
-      <OtherComp message={message} />
+      <Button onClick={() => setMessage("😊😊😊")}>메세지❤️</Button>
+      <MessageContext.Provider value={message}>
+        <AComp />
+      </MessageContext.Provider>
     </div>
   );
 }
+// 1. context 만들기
+// 어디서든 받아야 하니깐 변수로 받아야 한다.
+// context 이름은 (대문자로 시작하고...Context 끝난다.)
+let MessageContext = createContext(null);
+// 대부분에 코드에 null을 만든다.
 
 export default App;
