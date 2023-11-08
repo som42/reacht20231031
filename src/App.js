@@ -10,6 +10,12 @@ function App(props) {
   const [employees, setEmployees] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
+  const [employeesIdList, setEmployeesIdList] = useState([]);
+
+  useEffect(() => {
+    axios.get("/api/main1/sub7").then((r) => setEmployeesIdList(r.data));
+  }, []);
+
   useEffect(() => {
     setIsLoading(true);
     axios
@@ -27,16 +33,9 @@ function App(props) {
         background="blue.50"
       >
         {/*option[value=$]{$}*/}
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+        {employeesIdList.map((id) => (
+          <option value={id}>{id}</option>
+        ))}
       </Select>
       <Box>
         {isLoading && <Spinner />}
