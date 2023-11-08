@@ -11,6 +11,7 @@ function App(props) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get("/api/main1/sub5?id=" + employeesId)
       .then((response) => response.data)
@@ -23,7 +24,9 @@ function App(props) {
       <Select
         placeholder="직원 번호를 선택하세요🎈"
         onChange={(e) => setEmployeesId(e.target.value)}
+        background="blue.50"
       >
+        {/*option[value=$]{$}*/}
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -43,9 +46,15 @@ function App(props) {
             {employees === null ? (
               <Text>조회한 고객이 없습니다. 다른 번호를 선택해 주세요</Text>
             ) : (
-              <Text>
-                ❤️고객 이름 : {employees.lastName}😊
+              <Text background="#ffd6d1" style={{ color: "white" }}>
+                👉 직원 이름 : {employees.lastName}
                 {employees.firstName}❤️
+                <hr />
+                👉 직원 생일 : {employees.birthDate}🎈
+                <hr />
+                👉 직원 휴대폰 번호 : {employees.photo}🩵
+                <hr />
+                👉 직원 주소 : {employees.notes}💜
               </Text>
             )}
           </>
