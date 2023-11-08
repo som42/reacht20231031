@@ -3,10 +3,20 @@ import { Box, Select, Spinner, Text } from "@chakra-ui/react";
 import axios from "axios";
 
 // 고객 번호를 표시해보자이
+// use 머머머 애들은 if , for문 안에 넣지 말아라
 function App(props) {
   const [customerId, setCustomerId] = useState(0);
   const [customer, setCustomer] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+  const [customerIdList, setCustomerIdList] = useState([]);
+
+  useEffect(() => {
+    // 고객 번호들 가져오기  ( 처음에만 실행되면 되니깐 두번재 파라미터에 아무것도 안넣음)
+    axios
+      .get("/api/main1/sub6")
+      .then((respons) => setCustomerIdList(respons.data));
+  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,16 +33,10 @@ function App(props) {
         placeholder="고객 번호를 선택하세요"
         onChange={(e) => setCustomerId(e.target.value)}
       >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+        {/*option[value=$]{$}*10*/}
+        {customerIdList.map((id) => (
+          <option value={id}>{id}</option>
+        ))}
       </Select>
       <Box>
         {isLoading && <Spinner />}
